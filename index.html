@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock-Paper-Scissors</title>
+    <link rel = "stylesheet" href = "style.css">
     
 </head>
 <body>
-    <p>Alege-ti arma!</p>
-    <button id = "rockButton">Rock</button>
-    <button id = "paperButton">Paper</button>
-    <button id = "scissorsButton">Scissors</button>
-    <script src = "javascript.js"></script>
-    <div id = "rezultat">Rezultatul este:</div>
-    <p>Scor:</p>
+    
+    <div class = "container">
+        <p>Alege-ti arma!</p>
+    <div class = "btn">
+    <img src = "../rock-paper-scissors/images/rock.png" id = "rockButton" class = "Button">
+    <img src = "../rock-paper-scissors/images/paper.png" id = "paperButton"class = "Button">
+    <img src = "../rock-paper-scissors/images/scissors.png" id = "scissorsButton"class = "Button">
+    </div>
+    
+    <div id = "rezultat"></div>
     <div id = "scor"></div>
+    </div>
+
+    <script src = "javascript.js"></script>
 </body>
 </html>

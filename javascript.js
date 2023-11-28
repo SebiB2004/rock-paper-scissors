@@ -1,4 +1,6 @@
 let computerPickResult = "";
+let playerPickResult = "";
+
 function getComputerChoice(){
     let choice = Math.floor(Math.random() * 3) + 1;
     if(choice == 1){
@@ -16,6 +18,10 @@ function getComputerChoice(){
     }
 }
   
+const rezultatContainer = document.getElementById("rezultat");
+const scorID = document.getElementById("scor");
+const scor = document.createElement("p");
+
 function afisare(rezultat,playerWin,computerWin){
     const rezultatElement = document.createElement("p");
     rezultatElement.textContent = rezultat;
@@ -26,12 +32,12 @@ function afisare(rezultat,playerWin,computerWin){
     playerWinElement.textContent = "Ai ales " + playerPickResult;
     computerWinElement.textContent = "Computerul a ales " + computerPickResult;
 
-    const scorID = document.getElementById("scor");
-    const scor = document.createElement("p");
-    scor.textContent = playerWin + " - " + computerWin;
+
+    
+    scor.textContent = "Scorul tau: " + playerWin + " - " + "Scorul calculatorului: " + computerWin;
 
 
-    const rezultatContainer = document.getElementById("rezultat");
+    
     rezultatContainer.innerHTML = "";
     
     rezultatContainer.appendChild(rezultatElement);
@@ -65,17 +71,21 @@ function playRound(playerSelection){
         afisare("Computerul a castigat",playerWin,computerWin);
         playerWin = 0;
         computerWin = 0;
+        rezultatContainer.innerHTML = "";
+        scor.textContent = "Computerul a castigat!";
      }
      if(playerWin == 5){
         afisare("Felicitari! Ai castigat!",playerWin,computerWin);
         playerWin = 0;
         computerWin = 0;
+        rezultatContainer.innerHTML = "";
+        scor.textContent = "Felicitari! Ai castigat!"
      }
     
 
 } 
 
-let playerPickResult = "";
+
 rockButton.addEventListener("click", function(){
     playerPickResult = "rock";
     playRound("rock");
